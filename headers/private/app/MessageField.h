@@ -348,7 +348,7 @@ AddItem(const T1& data)
 			(!SizePolicy::Fixed() ||
 			fMaxSize != SizePolicy::Size(data)))
 		{
-			fMaxSize = max(SizePolicy::Size(data), fMaxSize);
+			fMaxSize = max_c(SizePolicy::Size(data), fMaxSize);
 			fFlags &= ~MSG_FLAG_FIXED_SIZE;
 		}
 	}
