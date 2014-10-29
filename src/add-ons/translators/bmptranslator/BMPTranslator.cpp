@@ -891,6 +891,7 @@ BPositionIO *outDestination, color_space fromspace, MSInfoHeader &msheader)
 		for (uint32 i = 0; i < msheader.width; i++) {
 			uint8 *bitspixel, *bmppixel;
 			uint16 val;
+			rgb_color c;
 			switch (fromspace) {
 				case B_RGB32:
 				case B_RGBA32:
@@ -954,7 +955,7 @@ BPositionIO *outDestination, color_space fromspace, MSInfoHeader &msheader)
 				case B_CMAP8:
 					bitspixel = bitsRowData + (i * bitsBytesPerPixel);
 					bmppixel = bmpRowData + (i * 3);
-					rgb_color c = pmap->color_list[bitspixel[0]];
+					c = pmap->color_list[bitspixel[0]];
 					bmppixel[0] = c.blue;
 					bmppixel[1] = c.green;
 					bmppixel[2] = c.red;
