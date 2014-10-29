@@ -263,7 +263,7 @@ bool X11Driver::Initialize(void)
 
 	// Then we point XCreateImage at the UtilityBitmap's bits
 	ximage = XCreateImage (display, CopyFromParent, depth, ZPixmap, 0,
-						(char*)_target->Bits(), X11DRIVER_WIDTH, X11DRIVER_HEIGHT,
+						(char*)target->Bits(), X11DRIVER_WIDTH, X11DRIVER_HEIGHT,
 						X11DRIVER_DEPTH, X11DRIVER_WIDTH * 4);
 
 	xpixmap = XCreatePixmap(display, xcanvas,
@@ -388,7 +388,7 @@ void X11Driver::CopyBitmap(ServerBitmap *bitmap, const BRect &sourcerect, const 
 */
 void X11Driver::Invalidate(const BRect &r)
 {
-	BRect damage = (r & _target->Bounds());
+	BRect damage = (r & fTarget->Bounds());
 
 	STRACE("X11Driver::Invalidate()\n");
 	
@@ -409,33 +409,33 @@ void X11Driver::Invalidate(const BRect &r)
 */
 void X11Driver::DrawPixel(int x, int y, const RGBColor &color)
 {
-	int bytes_per_row = _target->BytesPerRow();
+	int bytes_per_row = fTarget->BytesPerRow();
 	RGBColor col(color);	// to avoid GetColor8/15/16() const issues
 
-	switch(_target->BitsPerPixel())
+	switch(fTarget->BitsPerPixel())
 	{
 		case 8:
 			{
-				uint8 *fb = (uint8 *)_target->Bits() + y*bytes_per_row;
+				uint8 *fb = (uint8 *)fTarget->Bits() + y*bytes_per_row;
 				uint8 color8 = col.GetColor8();
 				fb[x] = color8;
 			} break;
 		case 15:
 			{
-				uint16 *fb = (uint16 *)((uint8 *)_target->Bits() + y*bytes_per_row);
+				uint16 *fb = (uint16 *)((uint8 *)fTarget->Bits() + y*bytes_per_row);
 				uint16 color15 = col.GetColor15();
 				fb[x] = color15;
 			} break;
 		case 16:
 			{
-				uint16 *fb = (uint16 *)((uint8 *)_target->Bits() + y*bytes_per_row);
+				uint16 *fb = (uint16 *)((uint8 *)fTarget->Bits() + y*bytes_per_row);
 				uint16 color16 = col.GetColor16();
 				fb[x] = color16;
 			} break;
 		case 24:
 		case 32:
 			{
-				uint32 *fb = (uint32 *)((uint8 *)_target->Bits() + y*bytes_per_row);
+				uint32 *fb = (uint32 *)((uint8 *)fTarget->Bits() + y*bytes_per_row);
 				rgb_color fill_color = color.GetColor32();
 				uint32 color32 = (fill_color.alpha << 24) | (fill_color.red << 16) | (fill_color.green << 8) | (fill_color.blue);
 				fb[x] = color32;
