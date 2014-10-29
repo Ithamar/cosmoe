@@ -37,7 +37,7 @@ $(OBJDIR):
 	mkdir $(OBJDIR)
 
 $(OBJDIR)/$(EXE): $(OBJS) $(COSMOELIBDIR)/libcosmoe.@LIBEXT@ Makefile
-	$(CC) -g -rdynamic $(OBJS) -o $(OBJDIR)/$(EXE) `freetype-config --libs` @VIDEODRVLIB@ -L$(COSMOELIBDIR) -lcosmoe -lpng -lz
+	$(CC) -g -rdynamic $(OBJS) -o $(OBJDIR)/$(EXE) `freetype-config --libs` @VIDEODRVLIB@ -L$(COSMOELIBDIR) -lcosmoe -lpng -lz -lm -lstdc++ -lpthread
 
 install: $(OBJDIR)/$(EXE) $(bindir) $(fontdir)
 	cp -f $(OBJDIR)/$(EXE) $(bindir)

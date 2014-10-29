@@ -1,7 +1,7 @@
 prefix=@prefix@
 libdir=${prefix}/lib
 
-CFLAGS   = -Wall -Wpointer-arith -Wcast-align -Wsign-compare -Wno-multichar -c -g -O2 -pipe `cat @top_srcdir@/cosmoe.specs`
+CFLAGS   = -Wall -Wpointer-arith -Wcast-align -Wsign-compare -Wno-multichar -c -g -O2 -pipe `cat @top_srcdir@/cosmoe.specs` -fPIC
 CPPFLAGS = $(CFLAGS) -Woverloaded-virtual -Wno-ctor-dtor-privacy -Wnon-virtual-dtor -fexceptions
 
 LIBNAME = libcosmoe.@LIBEXT@

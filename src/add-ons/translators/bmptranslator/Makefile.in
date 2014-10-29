@@ -22,7 +22,7 @@ $(OBJDIR):
 	mkdir $(OBJDIR)
 
 $(OBJDIR)/$(EXE): $(OBJS) Makefile
-	$(CC) -g -rdynamic $(OBJS) -o $(OBJDIR)/$(EXE) -L$(COSMOELIBDIR) -lcosmoe -lz
+	$(CC) -g -rdynamic $(OBJS) -o $(OBJDIR)/$(EXE) -L$(COSMOELIBDIR) -lcosmoe -lz -lstdc++
 
 install: $(OBJDIR)/$(EXE) $(bindir)
 	cp -f $(OBJDIR)/$(EXE) $(bindir)

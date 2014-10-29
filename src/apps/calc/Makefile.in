@@ -24,7 +24,7 @@ OBJS := $(addprefix $(OBJDIR)/,$(OBJS))
 
 
 $(EXE): objs $(OBJS) Makefile
-	$(CC) -g $(OBJS) -lstdc++ -L$(COSMOELIBDIR) -lcosmoe -o $(EXE)
+	$(CC) -g $(OBJS) -lstdc++ -L$(COSMOELIBDIR) -lcosmoe -lm -o $(EXE)
 
 objs:
 	mkdir objs
