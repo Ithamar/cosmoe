@@ -129,8 +129,8 @@ area_id create_area(const char* name, void** start_addr, uint32 addr_spec, size_
 			{
 				*start_addr = g_pAreaMap[n].address;
 			}
-			strncpy( g_pAreaMap[n].name, name, 63 );
-			g_pAreaMap[n].name[63] = '\0';
+			strncpy( g_pAreaMap[n].name, name, B_OS_NAME_LENGTH );
+			g_pAreaMap[n].name[B_OS_NAME_LENGTH -1] = '\0';
 			g_pAreaMap[n].area = iShmID;
 			g_pAreaMap[n].size = size;
 			g_pAreaMap[n].lock = lock;
