@@ -22,6 +22,8 @@ class BEntry;
 extern "C" void  _ReservedShelf1__6BShelfFv(BShelf *const, int32,
 	const BMessage*, const BView*);
 
+class _TContainerViewFilter_;
+
 /*----------------------------------------------------------------*/
 /*----- BShelf class ---------------------------------------------*/
 
