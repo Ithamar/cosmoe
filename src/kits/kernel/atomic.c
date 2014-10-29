@@ -33,7 +33,7 @@
 static inline int32 atomic_exchange(vint32 *value, int32 old, int32 new)
 {
 	__asm__ __volatile__(
-		"lock; cmpxchgl %1, %2"
+		"lock; cmpxchg %1, %2"
 			: "+a" (old)
 			: "r" (new), "m" (__gcc_noalias__(value))
 			: "memory");
