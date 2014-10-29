@@ -30,6 +30,7 @@
 #include <limits.h>
 #include <new>
 #include <stdlib.h>
+#include <string.h>
 
 #include <Bitmap.h>
 #include <InterfaceDefs.h>

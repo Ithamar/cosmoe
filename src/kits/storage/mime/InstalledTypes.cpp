@@ -18,6 +18,7 @@
 
 #include <new>
 #include <stdio.h>
+#include <string.h>
 
 #define DBG(x) x
 //#define DBG(x)

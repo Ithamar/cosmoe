@@ -30,7 +30,7 @@
 #include <Rect.h>
 #include <Font.h>
 
-#include <freetype/freetype.h>
+#include <freetype2/freetype.h>
 
 class FontStyle;
 

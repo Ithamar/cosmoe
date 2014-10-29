@@ -7,6 +7,8 @@
 	BAppFileInfo and related structures' implementation.
 */
 
+#include <stdlib.h>
+
 #include <new>
 #include <set>
 #include <string>

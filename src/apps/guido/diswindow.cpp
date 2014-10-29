@@ -1,4 +1,5 @@
 /*This is diswindow.cpp*/
+#include <stdio.h>
 
 #include <Application.h>
 #include "diswindow.h"
