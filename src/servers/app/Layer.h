@@ -200,7 +200,7 @@ private:
 	void RequestDraw(const BRegion &reg, Layer *startFrom);
 	ServerWindow *SearchForServerWindow(void);
 
-	void Layer::SendUpdateMsg();
+	void SendUpdateMsg();
 	void SendViewMovedMsg(void);
 	void SendViewResizedMsg(void);
 
