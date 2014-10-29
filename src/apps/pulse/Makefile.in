@@ -1,0 +1,33 @@
+prefix=@prefix@
+bindir=$(prefix)/bin
+
+COPTS	= `cat @top_srcdir@/cosmoe.specs` -Wall -Wno-multichar -Woverloaded-virtual -Wnon-virtual-dtor -c
+
+OBJS	= DeskbarPulseView.o ProgressBar.o PulseApp.o PulseWindow.o ConfigView.o \
+			BottomPrefsView.o CPUButton.o PrefsWindow.o NormalPulseView.o MiniPulseView.o PulseView.o Prefs.o
+EXE	= pulse
+COSMOELIBDIR = @top_srcdir@/src/kits/objs
+
+CXX	= @CXX@
+LL	= @CXX@ 
+
+$(EXE) : $(OBJS) Makefile
+	$(LL) $(OBJS) -L$(COSMOELIBDIR) -lcosmoe -o $@
+
+install: $(EXE) $(bindir)
+	cp -f $(EXE) $(bindir)
+	strip --strip-all $(bindir)/$(EXE)
+
+$(bindir):
+	mkdir -p $(bindir)
+
+clean:
+	-rm $(EXE) $(OBJS) *~
+	
+distclean: clean
+	-rm -f Makefile
+
+.cpp.o:
+	$(CXX) $(COPTS) $< -o $@
+
+.PHONY: clean distclean deps doc install uninstall all

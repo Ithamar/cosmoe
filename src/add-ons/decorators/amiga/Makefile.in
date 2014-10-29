@@ -1,0 +1,46 @@
+
+prefix=@prefix@
+
+COPTS   = -Wall -Wno-multichar `cat @top_srcdir@/cosmoe.specs` -I@top_srcdir@/src/servers/app -c -O3
+
+CC = @CC@
+
+COSMOELIBDIR = @top_srcdir@/src/kits/objs
+DEVBIN = @COSMOESYS@/drivers/appserver/decorators
+OBJS =	amigadecorator.o
+TARGET = amiga
+
+OBJDIR	:= objs
+OBJS	:= $(addprefix $(OBJDIR)/,$(OBJS))
+
+
+#
+#	rules
+#
+
+$(OBJDIR)/%.o : %.c
+	$(CC) $(COPTS) $< -o $@
+
+$(OBJDIR)/%.o : %.cpp
+	$(CC) $(COPTS) $< -o $@
+
+
+all :	objs $(OBJDIR)/$(TARGET)
+
+objs:
+	mkdir objs
+
+$(OBJDIR)/$(TARGET): $(OBJS)
+	$(CC) @SHAREDLINK@ $(OBJS) -o $(OBJDIR)/$(TARGET) -L$(COSMOELIBDIR) -lcosmoe -lstdc++
+
+install: $(OBJDIR)/$(TARGET) $(DEVBIN)
+	cp -f $(OBJDIR)/$(TARGET) $(DEVBIN)/$(TARGET)
+
+$(DEVBIN):
+	mkdir -p $(DEVBIN)
+
+clean:
+	-rm $(OBJS) $(OBJDIR)/$(TARGET) *~
+
+distclean: clean
+	-rm -f Makefile

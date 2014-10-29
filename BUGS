@@ -1,0 +1,51 @@
+Cosmoe known bugs as of 12/03/2004
+----------------------------------
+
+appserver hits assertions in Layer.cpp
+
+Cosmoe cursor causes redraw problems when dragging a window
+
+Cosmoe cursor is not masked correctly
+
+Moving a Cosmoe windows outside the bounds of the enclosing X Window can cause
+redraw problems
+
+There is a race condition which causes Cosmoe to successfully launch only
+about 90% of the time
+
+Text redraw is slow
+
+Floating point exception in port.c when an app closes
+
+Bitmaps do not draw
+
+Triangle, polygon, and rounded rect drawing is unimplemented
+
+DirectFB driver compiles but does not work
+
+Menus can be opened but not closed (other than selecting an item)
+
+Once a window is moved, the window contents sometimes do not respond to clicks
+
+Text does not draw when using BStringView
+
+When a window is closed, the dirty region in any underlying windows is not updated (though the window border is)
+
+
+Future enhancements (code donations accepted!)
+-----------------------------------------
+
+Cosmoe uses a Be-incompatible BFont implementation that is reference
+counted on the client side instead of the server side.  This makes
+anything to do with textual output very hard or impossible to port
+from Be/Haiku.  Major work is required in Font.cpp, View.cpp, and
+the appserver to support this.  The new code DOES work in 0.8, but
+the backporting is non-trivial, to say the least.  This is a major
+goal for 0.7.3.
+
+Implement triangle, polygon, and rounded rect drawing.  This
+requires changes in View.cpp, ServerProtocol.h, and render.cpp at
+the least.  The driver code is done; only the communications code
+to get the data from the View to the appserver Layer is missing.
+The changes are very straightforward, however it is not a great
+priority because nothing is using these functions at present.

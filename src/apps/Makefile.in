@@ -1,0 +1,15 @@
+# Recursively build the Cosmoe source tree
+# Copyright 2002-2004, Bill Hayden
+# Part of the Cosmoe project
+# http://www.cosmoe.com
+
+SUBPROJECTS =	cterm \
+				desktop \
+				bedate \
+				calc \
+				pulse \
+				testharness \
+				guido \
+				osutils
+
+include @top_srcdir@/Makefile.common

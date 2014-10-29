@@ -1,0 +1,4 @@
+SUBPROJECTS = amiga be next
+
+include @top_srcdir@/Makefile.common
+

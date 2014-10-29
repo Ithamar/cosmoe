@@ -1,0 +1,33 @@
+prefix=
+bindir=${prefix}/bindir
+
+COPTS	= -g -Wall -Wno-multichar -Woverloaded-virtual -Wnon-virtual-dtor -c -specs=../../cosmoe.specs
+
+OBJS = main.o fontpanel.o screenpanel.o windowpanel.o keyboardpanel.o coloredit.o
+EXE	= guiprefs
+COSMOELIBDIR=../../libcosmoe/objs
+
+CC	= gcc
+LL	= g++
+LIBS	= -lm -L$(COSMOELIBDIR) -lcosmoe -ldl -lpthread
+
+$(EXE) : $(OBJS)
+	$(LL) $(OBJS) $(LIBS) -o $@
+
+install: $(EXE) $(bindir)
+	cp -f $(EXE) $(bindir)
+
+$(bindir):
+	mkdir -p $(bindir)
+
+clean:
+	-rm -f $(EXE) $(OBJS) *~
+
+distclean: clean
+	-rm -f Makefile
+
+.cpp.o:
+	$(CC) $(COPTS) $< -o $@
+
+main.o : main.cpp
+	$(CC) $(COPTS) $< -o $@

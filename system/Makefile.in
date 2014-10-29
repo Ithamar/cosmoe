@@ -1,0 +1,18 @@
+
+prefix=@prefix@
+
+all:
+
+clean:
+
+distclean: clean
+	rm -f Makefile
+
+deps:
+
+doc:
+
+install:
+	mkdir -p /usr/local/share/cosmoe
+	cp -R . /usr/local/share/cosmoe 
+	rm -f /usr/local/share/Makefile*

@@ -1,0 +1,34 @@
+prefix=@prefix@
+bindir=${prefix}/bin
+
+COPTS	= -I$(COSMOE_INC) -Wall -c
+
+OBJS	= keymapconv.o
+EXE	= keymapconv
+
+CC	= gcc
+LL	= g++
+
+$(EXE) : $(OBJS)
+	$(LL) $(OBJS) -L$(COSMOE_LIB) -lcosmoe -o $@ -lpthread -ldl
+
+install: $(EXE) $(bindir)
+	cp -f $(EXE) $(bindir)/$(EXE)
+	strip --strip-all $(bindir)/$(EXE)
+
+$(bindir);
+	mkdir -p $(bindir)
+
+clean:
+	-rm $(OBJS)
+	
+distclean: clean
+	-rm -f Makefile
+
+#.c.o :
+#	$(CC) $(COPTS) $< -o $@
+.cpp.o:
+	$(CC) $(COPTS) $< -o $@
+
+main.o : main.cpp
+	$(CC) $(COPTS) $< -o $@

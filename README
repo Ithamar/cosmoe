@@ -1,0 +1,80 @@
+Welcome to Cosmoe 0.7.2!
+
+
+INSTALLATION
+------------
+Cosmoe is built using the same method as most open-source software:
+
+./configure
+make
+ { become root }
+make install
+
+If you have DirectFB installed on your computer, and you would like
+to hack the (non-working) DirectFB driver, configure like so:
+
+./configure --enable-directfb
+
+The VESA and XWindows targets are no longer supported.
+
+PREREQUISITES
+-------------
+Using any gcc version prior to 3.0 is unsupported and may fail to
+compile Cosmoe.  gcc 2.96 (though not 2.95 or earlier) worked at one
+point, but has not been tested by the author in quite some time.
+
+Cosmoe is developed under Linux kernel 2.6.9 and gcc 3.4.2 using the
+Fedora Core 3 distribution.  However, any kernel version 2.4.22 or
+later, along with any version of gcc3 should be sufficient to compile
+and run Cosmoe.  Cosmoe may also be configured and run under MacOS X
+or NetBSD using XWindows or SDL output mode, or so I hear.
+
+RUNNING COSMOE
+--------------
+Run the cosmoe.sh shell script as root to start Cosmoe
+
+To quit Cosmoe, type exit in the shell or close the cterm window.
+
+PROBLEMS
+--------
+If Cosmoe fails to compile for you, please let me know by e-mail.
+
+If a Cosmoe app crashes, please send me a backtrace.
+
+If the appserver crashes you can check the file server.out for some
+hopefully helpful information.  If the terminal crashes you can check
+the file cterm.out.
+
+API DOCUMENTATION
+-----------------
+Since Cosmoe now conforms quite closely to the Be API, the best
+API documentation to use is the BeBook, available at several sites
+online.
+
+You can also go to the libcosmoe directory and run "make doc" if you
+have doxygen installed.  Limited html documentation will then be
+produced in the docs directory inside the libcosmoe directory.
+
+MAKING SOURCE CHANGES
+---------------------
+Source code improvements are welcomed!  Please visit www.cosmoe.com to
+see the latest bug reports and enhancement requests.
+
+If you are making source code changes to libcosmoe or the appserver, you
+should run "make deps" to ensure that dependencies will be created and
+used.  Once this command is run, the dependencies will automatically be
+updated from that point forward until such time as a "make clean" or
+"make distclean" is performed.
+
+Any questions?  E-mail me (Bill Hayden) and I'll try to clear things up.
+
+Author's E-mail:
+hayden@haydentech.com
+
+Websites:
+www.cosmoe.com
+www.sf.net/projects/cosmoe
+
+Mailing Lists:
+www.topica.com/lists/cosmoe       (General Cosmoe Discussion)
+www.topica.com/lists/cosmoe-devel (CVS commit mailing list)

@@ -1,0 +1,16 @@
+/*!
+
+\defgroup storage The Cosmoe highlevel filesystem API
+
+This section will take you trough the Cosmoe highlevel filesystem API.
+C++ programs can take advantage of this API to get easy access to the
+filesystem.
+
+NOTE: Throughout this documentation the name "file" might be used on
+any nodes located in the FS so a "file" might not be a regular file
+but can also be a directory or symlink depending on the context where
+the name is used.
+
+
+*/
+
