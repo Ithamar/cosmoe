@@ -1,0 +1,34 @@
+SubDir OBOS_TOP src servers registrar ;
+
+UsePrivateHeaders app ;
+UsePrivateHeaders shared ;
+UsePrivateHeaders storage ;
+
+AddResources obos_registrar : registrar.rdef ;
+
+Server obos_registrar :
+	AppInfoList.cpp
+	ClipboardHandler.cpp
+	ClipboardTree.cpp
+	Event.cpp
+	EventMaskWatcher.cpp
+	EventQueue.cpp
+	MessageEvent.cpp
+	MessageHandler.cpp
+	MessageRunnerManager.cpp
+	MIMEManager.cpp
+	PriorityMessageQueue.cpp
+	RecentApps.cpp
+	RecentEntries.cpp
+	Registrar.cpp
+	RosterAppInfo.cpp
+	RosterSettingsCharStream.cpp
+	TRoster.cpp
+	Watcher.cpp
+	WatchingService.cpp
+;
+LinkSharedOSLibs obos_registrar :
+	<boot!home!config!lib>libopenbeos.so
+	stdc++.r4
+	be
+;

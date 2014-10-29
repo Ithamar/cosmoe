@@ -1,0 +1,36 @@
+prefix=@prefix@
+bindir=${prefix}/bin
+
+CFLAGS   = -g -c -Wall -Wno-multichar -Woverloaded-virtual -Wnon-virtual-dtor `cat @top_srcdir@/cosmoe.specs`
+
+OBJS	= main.o tview.o
+EXE	= cterm
+COSMOELIBDIR = @top_srcdir@/src/kits/objs
+
+CXX	= @CXX@
+LD	= @CXX@
+
+all: $(EXE)
+
+$(EXE): $(OBJS) Makefile
+	$(LD) $(OBJS) -L$(COSMOELIBDIR) -lcosmoe -o $@
+
+install: $(EXE) $(bindir)
+	cp -f $(EXE) $(bindir)
+
+$(bindir):
+	mkdir -p $(bindir)
+
+clean:
+	-rm -f $(EXE) $(OBJS) *~
+
+distclean: clean
+	-rm -f Makefile
+
+.cpp.o:
+	$(CXX) $(CFLAGS) $< -o $@
+
+main.o:		main.cpp tview.h
+tview.o:	tview.cpp tview.h
+
+.PHONY: clean distclean deps doc install uninstall all
