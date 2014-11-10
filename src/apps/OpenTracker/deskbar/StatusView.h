@@ -44,6 +44,8 @@ All rights reserved.
 #include "BarView.h"
 #include "TimeView.h"
 
+class TReplicantShelf;
+
 const float kMaxReplicantHeight = 16.0f;
 const float kMaxReplicantWidth = 16.0f;
 const int32 kMinimumReplicantCount = 6;

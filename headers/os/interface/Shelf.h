@@ -23,6 +23,8 @@ class BEntry;
 /*----------------------------------------------------------------*/
 /*----- BShelf class ---------------------------------------------*/
 
+class _TContainerViewFilter_;
+
 class BShelf : public BHandler {
 public:
 						BShelf(BView *view,

@@ -31,6 +31,8 @@ extern Array<Layer>*     g_pcLayers;
 
 void config_changed();
 
+Decorator* new_decorator(Layer* pcView, int32 wlook, int32 wfeel,
+			uint32 wflags);
 /*!
 	\class AppServer AppServer.h
 	\brief main manager object for the app_server

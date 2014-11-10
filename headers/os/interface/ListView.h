@@ -26,6 +26,7 @@ class Button;
 class BMessage;
 
 class ListViewContainer;
+class ListViewHeader;
 
 typedef std::vector<int>			      column_map;
 
