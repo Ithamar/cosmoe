@@ -29,6 +29,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <png.h>
+#include <zlib.h>
 #include <ColorUtils.h>
 #include "PNGDump.h"
 
@@ -76,7 +77,7 @@ printf("Couldn't create info struct\n");
 		return;
 	}
 	
-	if(setjmp(png_ptr->jmpbuf))
+	if(setjmp(png_jmpbuf(png_ptr)))
 	{
 #ifdef DEBUG_PNGDUMP
 printf("Couldn't set jump\n");
