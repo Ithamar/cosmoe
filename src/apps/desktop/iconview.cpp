@@ -6,6 +6,7 @@
 #include <sys/stat.h>
 #include <ctype.h>
 #include <assert.h>
+#include <string.h>
 
 #include "iconview.h"
 

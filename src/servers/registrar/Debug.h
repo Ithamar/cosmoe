@@ -10,6 +10,7 @@
 #endif
 
 #include <stdio.h>
+#include <string.h>
 #define __out printf
 
 // Short overview over the debug output macros:

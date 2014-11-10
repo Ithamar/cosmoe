@@ -40,6 +40,7 @@
 
 // Standard Includes -----------------------------------------------------------
 #include <algorithm>
+#include <string.h>
 
 // System Includes -------------------------------------------------------------
 #include <Application.h>

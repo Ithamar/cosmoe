@@ -1,6 +1,6 @@
 #include <VolumeRoster.h>
 #include <stdio.h>
-
+#include <string.h>
 
 
 bool Prepend(void* inItem);

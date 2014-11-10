@@ -13,6 +13,7 @@
 #include <MimeType.h>
 #include <mime/database_support.h>
 #include <Node.h>
+#include <string.h>
 
 namespace BPrivate {
 namespace Storage {

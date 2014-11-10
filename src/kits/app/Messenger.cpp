@@ -33,6 +33,7 @@
 #include <new>
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
 
 // System Includes -------------------------------------------------------------
 #include <Application.h>

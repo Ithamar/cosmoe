@@ -21,6 +21,7 @@
 #define __EXCEPTIONS_H__
 
 #include <exception>
+#include <string.h>
 
 class GeneralFailure : public std::exception
 {

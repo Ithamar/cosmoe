@@ -26,6 +26,7 @@
 
 // Standard Includes -----------------------------------------------------------
 #include <stdio.h>
+#include <string.h>
 
 // System Includes -------------------------------------------------------------
 #include <Message.h>

@@ -22,7 +22,7 @@
 #include "clipboard.h"
 
 #include <Message.h>
-
+#include <string.h>
 
 
 SrvClipboard::ClipboardMap SrvClipboard::s_cClipboardMap;
