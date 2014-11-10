@@ -5,38 +5,38 @@
 
 all:
 	@for subproj in $(SUBPROJECTS); do\
-		PWD=$(PWD)/$$subproj;\
-		if ! $(MAKE) -C $(PWD)/$$subproj; then exit 1; fi;\
+		PWD=$$(pwd)/$$subproj;\
+		if ! $(MAKE) -C $$(pwd)/$$subproj; then exit 1; fi;\
 	done
 
 doc:
 	@for subproj in $(SUBPROJECTS); do\
-		PWD=$(PWD)/$$subproj;\
-		if ! $(MAKE) -C $(PWD)/$$subproj doc; then exit 1; fi;\
+		PWD=$$(pwd)/$$subproj;\
+		if ! $(MAKE) -C $$(pwd)/$$subproj doc; then exit 1; fi;\
 	done
 
 install-doc:
 	@for subproj in $(SUBPROJECTS); do\
-		PWD=$(PWD)/$$subproj;\
-		if ! $(MAKE) -C $(PWD)/$$subproj install-doc; then exit 1; fi;\
+		PWD=$$(pwd)/$$subproj;\
+		if ! $(MAKE) -C $$(pwd)/$$subproj install-doc; then exit 1; fi;\
 	done
 
 install:
 	@for subproj in $(SUBPROJECTS); do\
-		PWD=$(PWD)/$$subproj;\
-		if ! $(MAKE) -C $(PWD)/$$subproj install; then exit 1; fi;\
+		PWD=$$(pwd)/$$subproj;\
+		if ! $(MAKE) -C $$(pwd)/$$subproj install; then exit 1; fi;\
 	done
 
 clean:
 	@for subproj in $(SUBPROJECTS); do\
-		PWD=$(PWD)/$$subproj;\
-		if ! $(MAKE) -C $(PWD)/$$subproj clean; then exit 1; fi;\
+		PWD=$$(pwd)/$$subproj;\
+		if ! $(MAKE) -C $$(pwd)/$$subproj clean; then exit 1; fi;\
 	done
 
 distclean:
 	@for subproj in $(SUBPROJECTS); do\
-		PWD=$(PWD)/$$subproj;\
-		if ! $(MAKE) -C $(PWD)/$$subproj distclean; then exit 1; fi;\
+		PWD=$$(pwd)/$$subproj;\
+		if ! $(MAKE) -C $$(pwd)/$$subproj distclean; then exit 1; fi;\
 	done
 	-rm -f Makefile
 	-rm -f config.cache
@@ -51,6 +51,6 @@ distclean:
 
 deps:
 	@for subproj in $(SUBPROJECTS); do\
-		PWD=$(PWD)/$$subproj;\
-		$(MAKE) -ik -C $(PWD)/$$subproj deps 2>/dev/null;\
+		PWD=$$(pwd)/$$subproj;\
+		$(MAKE) -ik -C $$(pwd)/$$subproj deps 2>/dev/null;\
 	done
