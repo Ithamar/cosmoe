@@ -49,11 +49,11 @@ AppserverConfig::AppserverConfig()
 	
 	m_nDoubleClickDelay     = 500000LL;
 
-	AddFontConfig( DEFAULT_FONT_REGULAR, font_properties( "Lucida Sans", "Regular", FPF_SYSTEM, 8.0f ) );
-	AddFontConfig( DEFAULT_FONT_BOLD, font_properties( "Lucida Sans", "Bold", FPF_SYSTEM, 8.0f ) );
-	AddFontConfig( DEFAULT_FONT_FIXED, font_properties( "Lucida Sans Typewriter", "Regular", FPF_SYSTEM | FPF_MONOSPACED, 8.0f ) );
-	AddFontConfig( DEFAULT_FONT_WINDOW, font_properties( "Lucida Sans", "Regular", FPF_SYSTEM, 8.0f ) );
-	AddFontConfig( DEFAULT_FONT_TOOL_WINDOW, font_properties( "Lucida Sans", "Regular", FPF_SYSTEM, 7.0f ) );
+	AddFontConfig( DEFAULT_FONT_REGULAR, font_properties( "Bitstream Vera Sans", "Roman", FPF_SYSTEM, 8.0f ) );
+	AddFontConfig( DEFAULT_FONT_BOLD, font_properties( "Bitstream Vera Sans", "Bold", FPF_SYSTEM, 8.0f ) );
+	AddFontConfig( DEFAULT_FONT_FIXED, font_properties( "Bitstream Vera Sans", "Roman", FPF_SYSTEM | FPF_MONOSPACED, 8.0f ) );
+	AddFontConfig( DEFAULT_FONT_WINDOW, font_properties( "Bitstream Vera Sans", "Roman", FPF_SYSTEM, 8.0f ) );
+	AddFontConfig( DEFAULT_FONT_TOOL_WINDOW, font_properties( "Bitstream Vera Sans", "Roman", FPF_SYSTEM, 7.0f ) );
 
 	m_bDirty = false;
 }
