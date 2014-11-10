@@ -77,7 +77,7 @@ printf("Couldn't create info struct\n");
 		return;
 	}
 	
-	if(setjmp(png_ptr->jmpbuf))
+	if(setjmp(png_jmpbuf(png_ptr)))
 	{
 #ifdef DEBUG_PNGDUMP
 printf("Couldn't set jump\n");
