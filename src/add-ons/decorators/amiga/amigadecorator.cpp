@@ -243,7 +243,7 @@ void AmigaDecorator::FrameSized( const BRect& cFrame )
 	{
 		BRect cDamage = _frame;
 
-		cDamage.top = cDamage.bottom - max( m_vBottomBorder, m_vBottomBorder + cDelta.y ) - 1.0f;
+		cDamage.top = cDamage.bottom - max_c( m_vBottomBorder, m_vBottomBorder + cDelta.y ) - 1.0f;
 		pcView->Invalidate( cDamage );
 	}
 }

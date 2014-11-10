@@ -78,21 +78,21 @@ FrameView::FrameView(const BPoint &where, const char *name, uint32 resizeMask,
 void FrameView::ColoringBasis(rgb_color basis_color)
 {
 	rgb_color view_color = basis_color;
-	view_color.red = min(view_color.red+15, 255);
-	view_color.green = min(view_color.green+15, 255);
-	view_color.blue = min(view_color.blue+15, 255);
+	view_color.red = min_c(view_color.red+15, 255);
+	view_color.green = min_c(view_color.green+15, 255);
+	view_color.blue = min_c(view_color.blue+15, 255);
 	SetViewColor(view_color);
 
 	rgb_color hi_color = basis_color;
-	hi_color.red = max(hi_color.red-45, 0);
-	hi_color.green = max(hi_color.green-45, 0);
-	hi_color.blue = max(hi_color.blue-45, 0);
+	hi_color.red = max_c(hi_color.red-45, 0);
+	hi_color.green = max_c(hi_color.green-45, 0);
+	hi_color.blue = max_c(hi_color.blue-45, 0);
 	SetHighColor(hi_color);
 
 	rgb_color low_color = basis_color;
-	low_color.red = min(low_color.red+45, 255);
-	low_color.green = min(low_color.green+45, 255);
-	low_color.blue = min(low_color.blue+45, 255);
+	low_color.red = min_c(low_color.red+45, 255);
+	low_color.green = min_c(low_color.green+45, 255);
+	low_color.blue = min_c(low_color.blue+45, 255);
 	SetLowColor(low_color);
 }
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */

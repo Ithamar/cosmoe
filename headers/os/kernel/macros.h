@@ -3,8 +3,10 @@
 
 #define	ABS(a)	(((a)>=0) ? (a) : (-(a)))
 
+#ifndef __cplusplus
 #define	min(a,b)	(((a)<(b)) ? (a) : (b) )
 #define	max(a,b)	(((a)>(b)) ? (a) : (b) )
+#endif
 
 #define	__assertw( expr ) do {if ( !(expr) ) 							\
   printf( "Assertion failure (" #expr ")\n"							\

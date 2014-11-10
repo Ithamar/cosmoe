@@ -387,7 +387,7 @@ void TermView::ExpandCharMap( IPoint cNewSize )
 void TermView::FrameResized( float inWidth, float inHeight )
 {
     BRect   cBounds = Bounds();
-    IPoint cNewSize( max( 10, (cBounds.Width()+1.0f) / m_cCharSize.x ), (cBounds.Height()+1.0f) / m_cCharSize.y );
+    IPoint cNewSize( max_c( 10, (cBounds.Width()+1.0f) / m_cCharSize.x ), (cBounds.Height()+1.0f) / m_cCharSize.y );
 
         
     if ( 0 == m_nScrollTop && m_nScrollBottom == m_cCurCharMapSize.y - 1 || -1 == m_nScrollBottom )

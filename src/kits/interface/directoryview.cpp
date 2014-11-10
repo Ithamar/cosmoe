@@ -2369,7 +2369,7 @@ float FileRow::Height( BView* pcView )
 	font_height sHeight;
 	pcView->GetFontHeight( &sHeight );
 
-	return( max( 16.0f - 3.0f, sHeight.ascent + sHeight.descent ) );
+	return( max_c( 16.0f - 3.0f, sHeight.ascent + sHeight.descent ) );
 }
 
 //----------------------------------------------------------------------------

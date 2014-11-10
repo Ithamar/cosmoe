@@ -171,12 +171,12 @@ void BitmapView::Erase( const BRect& cFrame )
 		for ( int nDstY = int(cFrame.top) ; nDstY <= cFrame.bottom ; )
 		{
 			int y = nDstY % nHeight;
-			int nCurHeight = min( int(cFrame.bottom) - nDstY + 1, nHeight - y );
+			int nCurHeight = min_c( int(cFrame.bottom) - nDstY + 1, nHeight - y );
 
 			for ( int nDstX = int(cFrame.left) ; nDstX <= cFrame.right ; )
 			{
 				int x = nDstX % nWidth;
-				int nCurWidth = min( int(cFrame.right) - nDstX + 1, nWidth - x );
+				int nCurWidth = min_c( int(cFrame.right) - nDstX + 1, nWidth - x );
 
 				BRect cRect( 0, 0, nCurWidth - 1, nCurHeight - 1 );
 				DrawBitmap( m_pcBitmap, cRect.OffsetByCopy( x, y ), cRect.OffsetByCopy( nDstX, nDstY ) );

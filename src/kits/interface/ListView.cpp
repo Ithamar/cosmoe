@@ -2224,7 +2224,7 @@ void ListViewHeader::FrameResized( float inWidth, float inHeight )
 	{
 		BRect cDamage = cBounds;
 
-		cDamage.left = cDamage.right - max( 2.0f, inWidth + 1.0f );
+		cDamage.left = cDamage.right - max_c( 2.0f, inWidth + 1.0f );
 		Invalidate( cDamage );
 		bNeedFlush = true;
 	}
@@ -2233,7 +2233,7 @@ void ListViewHeader::FrameResized( float inWidth, float inHeight )
 	{
 		BRect cDamage = cBounds;
 
-		cDamage.top = cDamage.bottom - max( 2.0f, inHeight + 1.0f );
+		cDamage.top = cDamage.bottom - max_c( 2.0f, inHeight + 1.0f );
 		Invalidate( cDamage );
 		bNeedFlush = true;
 	}
@@ -2569,7 +2569,7 @@ void BListView::AdjustScrollBars( bool bOkToHScroll )
 			{
 				m_pcVScroll->SetSteps( ceil( vContentHeight / float(m_pcMainView->m_cRows.size()) ), ceil( vViewHeight * 0.8f ) );
 				m_pcVScroll->SetProportion( vProportion );
-				m_pcVScroll->SetRange( 0, max( vContentHeight - vViewHeight, 0.0f ) );
+				m_pcVScroll->SetRange( 0, max_c( vContentHeight - vViewHeight, 0.0f ) );
 			}
 		}
 		else
@@ -2633,7 +2633,7 @@ void BListView::AdjustScrollBars( bool bOkToHScroll )
 				vViewWidth  = m_pcHeaderView->Bounds().Width() + 1.0f;
 				if ( vViewWidth - nOff > m_pcMainView->m_vTotalWidth )
 				{
-					float nDeltaScroll = min( (vViewWidth - nOff) - m_pcMainView->m_vTotalWidth, -nOff );
+					float nDeltaScroll = min_c( (vViewWidth - nOff) - m_pcMainView->m_vTotalWidth, -nOff );
 					m_pcHeaderView->ScrollBy( nDeltaScroll, 0 );
 				}
 				else if ( vViewWidth > m_pcMainView->m_vTotalWidth )
@@ -2649,7 +2649,7 @@ void BListView::AdjustScrollBars( bool bOkToHScroll )
 			vViewHeight = m_pcMainView->Bounds().Height() + 1.0f;
 			if ( vViewHeight - nOff > vContentHeight )
 			{
-				float nDeltaScroll = min( (vViewHeight - nOff) - vContentHeight, -nOff );
+				float nDeltaScroll = min_c( (vViewHeight - nOff) - vContentHeight, -nOff );
 				m_pcMainView->ScrollBy( 0, nDeltaScroll );
 			}
 			else if ( vViewHeight > vContentHeight )
