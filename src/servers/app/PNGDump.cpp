@@ -29,6 +29,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <png.h>
+#include <zlib.h>
 #include <ColorUtils.h>
 #include "PNGDump.h"
 
